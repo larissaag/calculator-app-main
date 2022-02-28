@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+<body>
+  <main>
+    <div>
+      <div>
+        <p id="calc">calc</p>
+      </div>
+      <div id="screen">
+        <p id="result"></p>
+      </div>
+      <div id="table">
+        <table>
+          <tr>
+              <td class="button"><button onclick="insert('7')">7</button></td>
+              <td class="button"><button onclick="insert('8')">8</button></td>
+              <td class="button"><button onclick="insert('9')">9</button></td>
+              <td class="del"><button onclick="del()">DEL</button></td>
+          </tr>
+          <tr>
+              <td class="button"><button onclick="insert('4')">4</button></td>
+              <td class="button"><button onclick="insert('5')">5</button></td>
+              <td class="button"><button onclick="insert('6')">6</button></td>
+              <td class="button"><button onclick="insert('+')">+</button></td>
+          </tr>
+          <tr>
+              <td class="button"><button onclick="insert('1')">1</button></td>
+              <td class="button"><button onclick="insert('2')">2</button></td>
+              <td class="button"><button onclick="insert('3')">3</button></td>
+              <td class="button"><button onclick="insert('-')">-</button></td>
+          </tr>
+          <tr>
+              <td class="button"><button onclick="insert('.')">.</button></td>
+              <td class="button"><button onclick="insert('0')">0</button></td>
+              <td class="button"><button onclick="insert('/')">/</button></td>
+              <td class="button"><button onclick="insert('*')">x</button></td>
+          </tr>
+          <tr>
+              <td colspan="2"id="reset"><button onclick="reset()">RESET</button></td>
+              <td colspan="2" id="equal"><button onclick="calc()">=</button></td>
+          </tr>
+      </table>
+      </div>
+    </div>
+  </main>
+<footer>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/larissaag" target="_blank">Larissa Guilherme</a>.
+  </div>
+</footer>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
