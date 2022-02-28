@@ -8,15 +8,103 @@ body {
     background: hsl(222, 26%, 31%);
     overflow: hidden;
     color: hsl(0, 0%, 100%);
+    transition: .3s ease all;
+}
+body.themeTwo {
+    background: hsl(0, 0%, 90%);
+    color: hsl(60, 10%, 19%);
+}
+body.themeThree {
+    background: hsl(268, 75%, 9%);
+    color: hsl(52, 100%, 62%);
 }
 main {
 display: flex;
+flex-direction: column;
 padding-top: 70px;
 align-items: center;
 justify-content: center;
 }
-#calc {
-    margin-bottom: 20px;
+.header {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+width: 300px;
+margin-bottom: 20px;
+}
+.themeContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+    height: 60px;
+}
+#theme {
+    align-self: flex-end;
+    margin-right: 20px;
+}
+.themeChange {
+    align-self: center;
+    width: 100px;
+    height: 65px;
+}
+#numbers {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    top: 10px;
+    height: 18px;
+}
+.number {
+    width: 30%;
+    text-align: center;
+}
+.themeSwitch {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+input[type='radio'] {
+    display: none;
+}
+.lblTheme {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    background: hsl(224, 36%, 15%);
+    border-radius: 100px 0px 0px 100px;
+    cursor: pointer;
+}
+body.themeTwo .lblTheme {
+    background: hsl(0, 5%, 81%);
+}
+body.themeThree .lblTheme {
+    background: hsl(268, 71%, 12%);
+}
+.lblTheme:nth-child(4) {
+    border-radius: 0px;
+}
+.lblTheme:nth-child(6) {
+    border-radius: 0px 100px 100px 0px;
+}
+.switchBall {
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 5;
+    width: 22px;
+    height: 22px;
+    background: hsl(6, 63%, 50%);
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0px 0px 2px 2px rgb(0 0 0 / 20%);
+}
+body.themeTwo .switchBall {
+    background: hsl(25, 98%, 40%);
+}
+body.themeThree .switchBall {
+    background: hsl(176, 100%, 44%);
 }
 #screen {
     background: hsl(224, 36%, 15%);
@@ -24,6 +112,12 @@ justify-content: center;
     height: 80px;
     width: 300px;
     margin-bottom: 20px;
+}
+body.themeTwo #screen {
+    background: hsl(0, 0%, 93%);
+}
+body.themeThree #screen {
+    background: hsl(268, 71%, 12%);
 }
 #result {
     font-size: 40px;
@@ -37,7 +131,16 @@ justify-content: center;
     padding: 10px;
     width: 300px;
 }
+body.themeTwo #table {
+    background: hsl(0, 5%, 81%);
+}
+body.themeThree #table {
+    background: hsl(268, 71%, 12%);
+}
 .button {
+    padding: 5px;
+}
+#reset {
     padding: 5px;
 }
 .del {
@@ -53,6 +156,14 @@ justify-content: center;
     border-radius: 5px;
     cursor: pointer;
 }
+body.themeTwo .del button {
+    background: hsl(185, 42%, 37%);
+    box-shadow: 0 2px hsl(185, 58%, 25%);
+}
+body.themeThree .del button {
+    background: hsl(268, 47%, 21%);
+    box-shadow: 0 2px hsl(290, 70%, 36%);
+}
 .button button {
     width: 56px;
     height: 35px;
@@ -62,6 +173,16 @@ justify-content: center;
     box-shadow: 0 2px hsl(28, 16%, 65%);
     border-radius: 5px;
     cursor: pointer;
+}
+body.themeTwo .button button {
+    color: hsl(60, 10%, 19%);
+    background: hsl(45, 7%, 89%);
+    box-shadow: 0 2px hsl(35, 11%, 61%);
+}
+body.themeThree .button button {
+    color: hsl(52, 100%, 62%);
+    background: hsl(281, 89%, 26%);
+    box-shadow: 0 2px hsl(285, 91%, 52%);
 }
 #reset {
     padding: 5px;
@@ -76,6 +197,14 @@ justify-content: center;
     border-radius: 5px;
     cursor: pointer;
 }
+body.themeTwo #reset button {
+    background: hsl(185, 42%, 37%);
+    box-shadow: 0 2px hsl(185, 58%, 25%);
+}
+body.themeThree #reset button {
+    background: hsl(268, 47%, 21%);
+    box-shadow: 0 2px hsl(290, 70%, 36%);
+}
 #equal {
     padding: 5px;
 }
@@ -89,6 +218,15 @@ justify-content: center;
     border-radius: 5px;
     cursor: pointer;
 }
+body.themeTwo #equal button {
+    background: hsl(25, 98%, 40%);
+    box-shadow: 0 2px hsl(25, 99%, 27%);
+}
+body.themeThree #equal button {
+    background: hsl(176, 100%, 44%);
+    box-shadow: 0 2px hsl(177, 92%, 70%);
+    color: hsl(198, 20%, 13%);
+}
 footer {
     text-align: center;
     width: 100%;
@@ -97,8 +235,20 @@ footer {
     bottom: 0;
     color: hsl(0, 0%, 100%);
 }
+body.themeTwo footer {
+    color: hsl(60, 10%, 19%);
+}
+body.themeThree footer {
+    color: hsl(52, 100%, 62%);
+}
 footer a {
     text-decoration: none;
     color: hsl(0, 0%, 100%);
     cursor: pointer;
+}
+body.themeTwo footer a {
+    color: hsl(60, 10%, 19%);
+}
+body.themeThree footer a {
+    color: hsl(52, 100%, 62%);
 }
